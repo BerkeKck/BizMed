@@ -1,1 +1,0 @@
-select * from MC_PARAMETERS_DETAIL t ORDER BY ID DESC
