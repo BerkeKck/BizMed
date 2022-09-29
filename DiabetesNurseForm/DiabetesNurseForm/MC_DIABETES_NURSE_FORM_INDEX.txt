@@ -1,0 +1,54 @@
+-- Create table
+create table MC_DIABETES_NURSE_FORM
+(
+  id     INTEGER not null,
+  com_id INTEGER not null
+)
+tablespace BYZTS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 16K
+    next 8K
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table MC_DIABETES_NURSE_FORM
+  is 'DİYABET HEMŞİRESİ TAKİP FORMU (DETAY)';
+-- Add comments to the columns 
+comment on column MC_DIABETES_NURSE_FORM.id
+  is 'ID ';
+-- Create/Recreate indexes 
+create index FK_COM_ON_DNF on MC_DIABETES_NURSE_FORM (COM_ID)
+  tablespace BYZTS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+create unique index PK_MC_DIABETES_NURSE_FORM on MC_DIABETES_NURSE_FORM (ID)
+  tablespace BYZTS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table MC_DIABETES_NURSE_FORM
+  add constraint PK_MC_DIABETES_NURSE_FORM_DET primary key (ID);
+alter table MC_DIABETES_NURSE_FORM
+  add constraint FK_MC_DNF_ON_DNFD foreign key (COM_ID)
+  references CONNECTIONS_OF_MEDCARD (ID);

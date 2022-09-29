@@ -1,0 +1,158 @@
+-- Create table
+create table MC_DIABETES_NURSE_FORM_DET
+(
+  id                  INTEGER not null,
+  heigh               NUMBER(3),
+  weight              NUMBER(3),
+  waist               NUMBER(3),
+  bki                 NUMBER(3),
+  dm_type             INTEGER,
+  reg_bl_sug_meas     VARCHAR2(5),
+  diet_comp           VARCHAR2(5),
+  treat_comp          VARCHAR2(5),
+  hipogli_att         VARCHAR2(5),
+  oad_usea            VARCHAR2(5),
+  edema               VARCHAR2(5),
+  inj_site_cont       VARCHAR2(5),
+  wound_cont          VARCHAR2(5),
+  foot_ex             VARCHAR2(5),
+  paralysis           VARCHAR2(5),
+  bl_sug_meas         VARCHAR2(5),
+  dai_bl_sug_mon_book VARCHAR2(5),
+  ins_str_cond        VARCHAR2(5),
+  ins_pen_use         VARCHAR2(5),
+  gli_ed              VARCHAR2(5),
+  snac_info           VARCHAR2(5),
+  ins_side_eff        VARCHAR2(5),
+  ann_ins_notif       VARCHAR2(5),
+  dia_foot_info       VARCHAR2(5),
+  "GPL-1"             VARCHAR2(5),
+  perin_hyg_tra       VARCHAR2(5),
+  app                 VARCHAR2(5),
+  nurse_note          VARCHAR2(255),
+  dnf_id              INTEGER,
+  process_time        DATE,
+  nurse_id            INTEGER,
+  ctime               DATE,
+  cuser               VARCHAR2(12),
+  hipergli_att        VARCHAR2(5),
+  ins_usea            VARCHAR2(5)
+)
+tablespace BYZTS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 16K
+    next 8K
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table MC_DIABETES_NURSE_FORM_DET
+  is 'DİYABET HEMŞİRESİ TAKİP FORMU ';
+-- Add comments to the columns 
+comment on column MC_DIABETES_NURSE_FORM_DET.id
+  is 'ID ';
+comment on column MC_DIABETES_NURSE_FORM_DET.heigh
+  is 'BOY ';
+comment on column MC_DIABETES_NURSE_FORM_DET.weight
+  is 'KILO';
+comment on column MC_DIABETES_NURSE_FORM_DET.waist
+  is 'BEL GENISLIK';
+comment on column MC_DIABETES_NURSE_FORM_DET.bki
+  is 'BEDEN KITLE ENDEKSI';
+comment on column MC_DIABETES_NURSE_FORM_DET.dm_type
+  is 'TIP 1, TIP 2, GESTASYONEL, DIGER ';
+comment on column MC_DIABETES_NURSE_FORM_DET.reg_bl_sug_meas
+  is 'DUZENLI KAN SEKER OLCUMU';
+comment on column MC_DIABETES_NURSE_FORM_DET.diet_comp
+  is 'DIYET DÜZENİ';
+comment on column MC_DIABETES_NURSE_FORM_DET.treat_comp
+  is 'TEDAVI DUZENI';
+comment on column MC_DIABETES_NURSE_FORM_DET.hipogli_att
+  is 'HIPOGLISEMIK  ATAK ';
+comment on column MC_DIABETES_NURSE_FORM_DET.oad_usea
+  is 'OAD  KULLANIMI ';
+comment on column MC_DIABETES_NURSE_FORM_DET.edema
+  is 'ODEM ';
+comment on column MC_DIABETES_NURSE_FORM_DET.inj_site_cont
+  is 'ENJEKSIYON BOLGES KONTROLU';
+comment on column MC_DIABETES_NURSE_FORM_DET.wound_cont
+  is 'YARA KONTROL';
+comment on column MC_DIABETES_NURSE_FORM_DET.foot_ex
+  is 'AYAK MUAYENESI';
+comment on column MC_DIABETES_NURSE_FORM_DET.paralysis
+  is 'PARALIZI';
+comment on column MC_DIABETES_NURSE_FORM_DET.bl_sug_meas
+  is 'KAN SEKERI OLCUMU';
+comment on column MC_DIABETES_NURSE_FORM_DET.dai_bl_sug_mon_book
+  is 'GUNLUK KAN SEKERI TAKIP KITAPCIGI';
+comment on column MC_DIABETES_NURSE_FORM_DET.ins_str_cond
+  is 'INSULIN SAKLAMA KOSULLARI ';
+comment on column MC_DIABETES_NURSE_FORM_DET.ins_pen_use
+  is 'INSULIN KALEM KULLANIMI / UYGULAMA BOLGELERI';
+comment on column MC_DIABETES_NURSE_FORM_DET.gli_ed
+  is 'HIPOGLISEMI/HIPERGLISEMI EGITIMI';
+comment on column MC_DIABETES_NURSE_FORM_DET.snac_info
+  is 'ARA OGUN BILGILENDIRMESI';
+comment on column MC_DIABETES_NURSE_FORM_DET.ins_side_eff
+  is 'INSULIN YAN ETKILERI ';
+comment on column MC_DIABETES_NURSE_FORM_DET.ann_ins_notif
+  is 'YILLIK MUAYENE BILGILENDIRMESI  ';
+comment on column MC_DIABETES_NURSE_FORM_DET.dia_foot_info
+  is 'DIYABETIK AYAK BILGILENDIRMESI';
+comment on column MC_DIABETES_NURSE_FORM_DET."GPL-1"
+  is 'GLP-1 KULLLANIMI/UYGULAMA BOLGESI/KOMPLIKASYONLARI';
+comment on column MC_DIABETES_NURSE_FORM_DET.perin_hyg_tra
+  is 'PERINE HIJYEN EGITIMI';
+comment on column MC_DIABETES_NURSE_FORM_DET.app
+  is 'UYGULAMA';
+comment on column MC_DIABETES_NURSE_FORM_DET.nurse_note
+  is 'HEMSIRE NOTU';
+comment on column MC_DIABETES_NURSE_FORM_DET.dnf_id
+  is 'DIYABET HEMSIRESI TAKIP FORMU';
+comment on column MC_DIABETES_NURSE_FORM_DET.process_time
+  is 'ISLEM ZAMANI';
+comment on column MC_DIABETES_NURSE_FORM_DET.nurse_id
+  is 'HEMSIRE ID';
+comment on column MC_DIABETES_NURSE_FORM_DET.ctime
+  is 'OLUŞTURMA ZAMANI';
+comment on column MC_DIABETES_NURSE_FORM_DET.cuser
+  is 'OLUSTURAN KISI';
+comment on column MC_DIABETES_NURSE_FORM_DET.hipergli_att
+  is 'HIPERGLISEMIK ATAK ';
+comment on column MC_DIABETES_NURSE_FORM_DET.ins_usea
+  is 'INSULIN KULLANIMI ';
+-- Create/Recreate indexes 
+create index DNF_DF_DM_TYPE_IDX on MC_DIABETES_NURSE_FORM_DET (DM_TYPE)
+  tablespace BYZTS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+create unique index FK_MC_DIABETES_NURSE_FORM on MC_DIABETES_NURSE_FORM_DET (ID)
+  tablespace BYZTS
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table MC_DIABETES_NURSE_FORM_DET
+  add constraint PK_MC_DIABETES_NURSE_FORM primary key (ID);
+alter table MC_DIABETES_NURSE_FORM_DET
+  add constraint FK_DNF_ON_DNFD foreign key (DNF_ID)
+  references MC_DIABETES_NURSE_FORM (ID) on delete cascade;
